@@ -19,7 +19,7 @@ while True:
     if recognizer.AcceptWaveform(data):  # Отправляет аудиоданные в распознаватель речи
         result = json.loads(recognizer.Result())
         # Проверка на стоп слово
-        if result["text"] == STOP_WORD:
+        if STOP_WORD in result["text"]:
             print("Текст:", result["text"])
             break
         print("Текст:", result["text"])
